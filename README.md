@@ -94,7 +94,7 @@ sh OLAPcore.sh
 sh GPU_OLAPcore.sh
 测试完成后的日志文件在./log/GPU_OLAPcore中 可更换./POWER_BI/GPU_OLAPcore_test中的pbix的源数据文件来可视化展示GPU_OLAP核心功能性能
 - TPCH_Q5
-cd ./dbgen && ./dbgen -vf -s 1 && cd .. && python convert.py（生成和处理数据）
+unzip dbgen.zip && cd ./dbgen && ./dbgen -vf -s 1 && cd .. && python convert.py（生成和处理数据）
 ./TPCH_Q5_test 参数示例参照实验报告
 测试结束后打印测试结果
 - TPCH_Q5_operator
