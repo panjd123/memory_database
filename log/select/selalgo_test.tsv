@@ -1,0 +1,241 @@
+Query processing model	Intermediate Result Type	Branching type	Query processing model with different Intermediate Result Type and Branching type	Query processing model with different Branching type	Selection rate	Runtimes(ms)
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	2363.27
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	2823.77
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	2986.86
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	3120.26
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	3234.26
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	3277.8
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	3365.85
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	3398.55
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	3446.66
+Column-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	3369.85
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	3014.53
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	4005.53
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	4574.66
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	5148.2
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	5565.95
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	6068.33
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	6520.87
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	6906.89
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	7276.08
+Column-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	7587.88
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	1063.68
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	1176.83
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	1117.39
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	1084.01
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	1054.61
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	1023.06
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	985.88
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	942.164
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	895.566
+Column-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	848.654
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	1067.09
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	1184.2
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	1161.11
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	1142.71
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	1126.71
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	1113.38
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	1092.21
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	1068.9
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	1041.53
+Column-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Column-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	1007.48
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	8003.09
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	8294.15
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	8327.85
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	8271.65
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	8090.65
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	7761.83
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	7405.68
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	7059.54
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	6712.78
+Column-wise query model	the shared bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	6336.96
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.1	9387.55
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.2	9593.93
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.3	9448.81
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.4	9386.05
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.5	9340.62
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.6	9169.55
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.7	8940.2
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.8	8707.91
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	0.9	8479.79
+Column-wise query model	the independent bitmap	BRANCH_ONE_TWO_THREE	Column-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Column-wise model with BRANCH_ONE_TWO_THREE	1	8162.77
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	2158.36
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	2564.27
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	2730.61
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	2844.72
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	2940.09
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	3022.34
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	3084.87
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	3129.05
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	3154.4
+Vector-wise query model	the shared dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	3122.45
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	2781.86
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	3585.11
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	4114.81
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	4577.03
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	5010.34
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	5430.93
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	5842.97
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	6192.73
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	6569.93
+Vector-wise query model	the independent dynamic selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent dynamic selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	6893.72
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	1029.16
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	1099.57
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	1059.32
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	1020.11
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	1018.97
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	949.833
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	909.736
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	865.404
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	817.77
+Vector-wise query model	the shared fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the shared fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	777.045
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	1029.82
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	1101.64
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	1049.06
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	1000.07
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	966.51
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	945.521
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	898.378
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	857.804
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	815.793
+Vector-wise query model	the independent fixed selection vector	BRANCH_ONE_TWO_THREE	Vector-wise model with the independent fixed selection vector and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	777.123
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	8035.58
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	8442.39
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	8457.83
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	8324.41
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	8125.88
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	7800.51
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	7388
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	7123.84
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	6737.64
+Vector-wise query model	Vector-wise model with the shared bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	6357.15
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.1	9434.57
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.2	9736.91
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.3	9578.96
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.4	9528.66
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.5	9419.74
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.6	9319.77
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.7	9062.25
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.8	8914.7
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	0.9	8642.79
+Vector-wise query model	Vector-wise model with the independent bitmap and BRANCH_ONE_TWO_THREE	Vector-wise model with BRANCH_ONE_TWO_THREE	1	8430.88
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	2699
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	3086.93
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	3227.52
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	3403.46
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	3502.88
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	3586.1
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	3610.63
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	3665.49
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	3685.77
+Column-wise query model	the shared dynamic selection vector	NON_BRANCH	Column-wise model with the shared dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	1	3788.19
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	3381.73
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	4388.16
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	4914.77
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	5525.8
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	5987.52
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	6522.4
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	6876.93
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	7319.69
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	7757.31
+Column-wise query model	the independent dynamic selection vector	NON_BRANCH	Column-wise model with the independent dynamic selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	1	8037.74
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	817.963
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	950.956
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	1046.29
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	1016.66
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	1062.04
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	1054.32
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	1011.27
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	998.231
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	976.529
+Column-wise query model	the shared fixed selection vector	NON_BRANCH	Column-wise model with the shared fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	1	976.948
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	433.617
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	528.748
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	606.798
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	679.608
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	749.076
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	810.631
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	906.515
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	1031.81
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	1089.61
+Column-wise query model	the independent fixed selection vector	NON_BRANCH	Column-wise model with the independent fixed selection vector and NON_BRANCH	Column-wise model with NON_BRANCH	1	1364.74
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	7044.78
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	7368.51
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	7470.43
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	7429.44
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	7395.68
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	7200.99
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	6977.99
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	6784.16
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	6597.1
+Column-wise query model	the shared bitmap	NON_BRANCH	Column-wise model with the shared bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	1	6442.34
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.1	9175.17
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.2	9503.43
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.3	9341.48
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.4	9392.33
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.5	9264.44
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.6	9155.83
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.7	8919.85
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.8	8791.22
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	0.9	8589.2
+Column-wise query model	the independent bitmap	NON_BRANCH	Column-wise model with the independent bitmap and NON_BRANCH	Column-wise model with NON_BRANCH	1	8449.7
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	2574.94
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	3014.15
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	3050.22
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	3153.71
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	3247.84
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	3340.97
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	3505.55
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	3502.53
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	3490.61
+Vector-wise query model	the shared dynamic selection vector	NON_BRANCH	Vector-wise model with the shared dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	1	3528.32
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	3168.01
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	4093.06
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	4576.99
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	4992.77
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	5452.51
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	5990.59
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	6260.5
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	6686.03
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	7121.34
+Vector-wise query model	the independent dynamic selection vector	NON_BRANCH	Vector-wise model with the independent dynamic selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	1	7387.84
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	823.607
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	940.852
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	985.767
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	968.064
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	968.976
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	959.683
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	941.079
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	928.858
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	905.943
+Vector-wise query model	the shared fixed selection vector	NON_BRANCH	Vector-wise model with the shared fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	1	894.98
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	390.443
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	457.049
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	526.859
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	568.388
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	625.078
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	666.594
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	719.334
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	763.041
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	801.361
+Vector-wise query model	the independent fixed selection vector	NON_BRANCH	Vector-wise model with the independent fixed selection vector and NON_BRANCH	Vector-wise model with NON_BRANCH	1	872.644
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	7120.03
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	7459.95
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	7444.74
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	7531.53
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	7365.47
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	7324.85
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	6968.5
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	6817.25
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	6585.14
+Vector-wise query model	Vector-wise model with the shared bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	1	6267.13
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.1	9199.6
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.2	9372.8
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.3	9421.83
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.4	9290.13
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.5	9328.57
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.6	9096.35
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.7	8980.51
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.8	8742.14
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	0.9	8633.63
+Vector-wise query model	Vector-wise model with the independent bitmap and NON_BRANCH	Vector-wise model with NON_BRANCH	1	8396.16

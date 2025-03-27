@@ -1,0 +1,48 @@
+Aggregation algorithm	vec_size	Runtimes(ms)
+Vector-wise model	1	2455.81
+Vector-wise model	2	808.097
+Vector-wise model	4	536.589
+Vector-wise model	8	402.959
+Vector-wise model	16	331.971
+Vector-wise model	32	305.444
+Vector-wise model	64	288.471
+Vector-wise model	128	282.14
+Vector-wise model	256	280.652
+Vector-wise model	512	276.509
+Vector-wise model	1024	255.8
+Vector-wise model	2048	240.487
+Vector-wise model	4096	236.134
+Vector-wise model	8192	231.873
+Vector-wise model	16384	231.116
+Vector-wise model	32768	231.797
+Vector-wise model	65536	228.427
+Vector-wise model	131072	229.099
+Vector-wise model	262144	227.236
+Vector-wise model	524288	228.467
+Vector-wise model	1048576	226.861
+Vector-wise model	2097152	227.256
+Vector-wise model	4194304	231.508
+Vector-wise model	8388608	228.112
+Vector-wise model	16777216	229.278
+Vector-wise model with SIMD	8	320.841
+Vector-wise model with SIMD	16	197.407
+Vector-wise model with SIMD	32	133.529
+Vector-wise model with SIMD	64	104.713
+Vector-wise model with SIMD	128	89.709
+Vector-wise model with SIMD	256	83.058
+Vector-wise model with SIMD	512	77.18
+Vector-wise model with SIMD	1024	74.779
+Vector-wise model with SIMD	2048	73.702
+Vector-wise model with SIMD	4096	73.288
+Vector-wise model with SIMD	8192	72.738
+Vector-wise model with SIMD	16384	72.487
+Vector-wise model with SIMD	32768	74.152
+Vector-wise model with SIMD	65536	72.225
+Vector-wise model with SIMD	131072	72.25
+Vector-wise model with SIMD	262144	72.212
+Vector-wise model with SIMD	524288	72.245
+Vector-wise model with SIMD	1048576	72.082
+Vector-wise model with SIMD	2097152	72.101
+Vector-wise model with SIMD	4194304	72.091
+Vector-wise model with SIMD	8388608	73.816
+Vector-wise model with SIMD	16777216	72.145

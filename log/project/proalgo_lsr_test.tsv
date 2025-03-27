@@ -1,0 +1,25 @@
+Query Processing Model	Materialization strategy	Intermediate Result Type	Final Result Type	Query Processing Model with different Materialization strategy、Intermediate Result Type and Final Result Type	Lg(Selection Rate)	Runtimes(ms)
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-6	344.312
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-5	310.007
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-4	316.826
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-3	373.879
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-2	403.388
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	-1	716.17
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-6	282.983
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-5	283.873
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-4	301.97
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-3	338.92
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-2	482.151
+Vector-wise query processing	early materialization strategy		fixed vector final result	Vector-wise query processing with early materialization strategy and fixed vector final result	-1	1092.75
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-6	353.239
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-5	301.936
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-4	322.049
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-3	376.528
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-2	524.661
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	-1	1091.25
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-6	725.279
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-5	724.69
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-4	716.704
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-3	716.985
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-2	727.437
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	-1	821.667

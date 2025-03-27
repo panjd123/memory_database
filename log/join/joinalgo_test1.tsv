@@ -1,0 +1,235 @@
+join algorithm	table R size	phase type	running time
+vecjoin	5	build	0.001
+vecjoin	5	probe	7305.03
+vecjoin	5	total	7305.03
+vecjoin based on prefetching optimization	5	build	0
+vecjoin based on prefetching optimization	5	probe	4732.11
+vecjoin based on prefetching optimization	5	total	4732.11
+hashjoin	5	build	0.015
+hashjoin	5	probe	93054.9
+hashjoin	5	total	93054.9
+vecjoin	6	build	0.001
+vecjoin	6	probe	4351.02
+vecjoin	6	total	4351.02
+vecjoin based on prefetching optimization	6	build	0.001
+vecjoin based on prefetching optimization	6	probe	4092.96
+vecjoin based on prefetching optimization	6	total	4092.96
+hashjoin	6	build	0.02
+hashjoin	6	probe	101824
+hashjoin	6	total	101824
+vecjoin	7	build	0.002
+vecjoin	7	probe	4970.01
+vecjoin	7	total	4970.02
+vecjoin based on prefetching optimization	7	build	0.001
+vecjoin based on prefetching optimization	7	probe	5024.74
+vecjoin based on prefetching optimization	7	total	5024.74
+hashjoin	7	build	0.05
+hashjoin	7	probe	102671
+hashjoin	7	total	102671
+vecjoin	8	build	0.003
+vecjoin	8	probe	4378.38
+vecjoin	8	total	4378.38
+vecjoin based on prefetching optimization	8	build	0.003
+vecjoin based on prefetching optimization	8	probe	3059.63
+vecjoin based on prefetching optimization	8	total	3059.63
+hashjoin	8	build	0.063
+hashjoin	8	probe	85124.6
+hashjoin	8	total	85124.7
+vecjoin	9	build	0.007
+vecjoin	9	probe	4417.88
+vecjoin	9	total	4417.89
+vecjoin based on prefetching optimization	9	build	0.008
+vecjoin based on prefetching optimization	9	probe	3476.85
+vecjoin based on prefetching optimization	9	total	3476.85
+hashjoin	9	build	0.118
+hashjoin	9	probe	80181.6
+hashjoin	9	total	80181.8
+vecjoin	10	build	0.012
+vecjoin	10	probe	4230.33
+vecjoin	10	total	4230.34
+vecjoin based on prefetching optimization	10	build	0.004
+vecjoin based on prefetching optimization	10	probe	3095.79
+vecjoin based on prefetching optimization	10	total	3095.8
+hashjoin	10	build	0.244
+hashjoin	10	probe	84309.5
+hashjoin	10	total	84309.8
+vecjoin	11	build	0.036
+vecjoin	11	probe	4336.23
+vecjoin	11	total	4336.27
+vecjoin based on prefetching optimization	11	build	0.007
+vecjoin based on prefetching optimization	11	probe	3099.85
+vecjoin based on prefetching optimization	11	total	3099.86
+hashjoin	11	build	0.487
+hashjoin	11	probe	82886.8
+hashjoin	11	total	82887.3
+vecjoin	12	build	0.066
+vecjoin	12	probe	4370.14
+vecjoin	12	total	4370.2
+vecjoin based on prefetching optimization	12	build	0.017
+vecjoin based on prefetching optimization	12	probe	3840.4
+vecjoin based on prefetching optimization	12	total	3840.41
+hashjoin	12	build	0.946
+hashjoin	12	probe	82169.7
+hashjoin	12	total	82170.6
+vecjoin	13	build	0.06
+vecjoin	13	probe	3950.83
+vecjoin	13	total	3950.89
+vecjoin based on prefetching optimization	13	build	0.03
+vecjoin based on prefetching optimization	13	probe	3816.31
+vecjoin based on prefetching optimization	13	total	3816.34
+hashjoin	13	build	1.886
+hashjoin	13	probe	80903.7
+hashjoin	13	total	80905.5
+vecjoin	14	build	0.31
+vecjoin	14	probe	4372.8
+vecjoin	14	total	4373.11
+vecjoin based on prefetching optimization	14	build	0.076
+vecjoin based on prefetching optimization	14	probe	3152.84
+vecjoin based on prefetching optimization	14	total	3152.92
+hashjoin	14	build	3.756
+hashjoin	14	probe	84696.1
+hashjoin	14	total	84699.8
+vecjoin	15	build	0.636
+vecjoin	15	probe	3552.5
+vecjoin	15	total	3553.14
+vecjoin based on prefetching optimization	15	build	0.148
+vecjoin based on prefetching optimization	15	probe	3198.95
+vecjoin based on prefetching optimization	15	total	3199.09
+hashjoin	15	build	7.501
+hashjoin	15	probe	84714.6
+hashjoin	15	total	84722.1
+vecjoin	16	build	0.743
+vecjoin	16	probe	3560.57
+vecjoin	16	total	3561.31
+vecjoin based on prefetching optimization	16	build	0.289
+vecjoin based on prefetching optimization	16	probe	3242.89
+vecjoin based on prefetching optimization	16	total	3243.18
+hashjoin	16	build	15.017
+hashjoin	16	probe	93763.2
+hashjoin	16	total	93778.2
+vecjoin	17	build	2.564
+vecjoin	17	probe	4603.9
+vecjoin	17	total	4606.46
+vecjoin based on prefetching optimization	17	build	0.582
+vecjoin based on prefetching optimization	17	probe	3487.86
+vecjoin based on prefetching optimization	17	total	3488.44
+hashjoin	17	build	30.12
+hashjoin	17	probe	103783
+hashjoin	17	total	103814
+vecjoin	18	build	2.95
+vecjoin	18	probe	6335.32
+vecjoin	18	total	6338.27
+vecjoin based on prefetching optimization	18	build	1.533
+vecjoin based on prefetching optimization	18	probe	5015.79
+vecjoin based on prefetching optimization	18	total	5017.32
+hashjoin	18	build	63.988
+hashjoin	18	probe	153008
+hashjoin	18	total	153072
+vecjoin	19	build	5.291
+vecjoin	19	probe	8016.41
+vecjoin	19	total	8021.7
+vecjoin based on prefetching optimization	19	build	2.912
+vecjoin based on prefetching optimization	19	probe	5576.45
+vecjoin based on prefetching optimization	19	total	5579.36
+hashjoin	19	build	123.13
+hashjoin	19	probe	114154
+hashjoin	19	total	114277
+vecjoin	20	build	19.213
+vecjoin	20	probe	6469.77
+vecjoin	20	total	6488.98
+vecjoin based on prefetching optimization	20	build	4.411
+vecjoin based on prefetching optimization	20	probe	5472.52
+vecjoin based on prefetching optimization	20	total	5476.93
+hashjoin	20	build	241.652
+hashjoin	20	probe	177104
+hashjoin	20	total	177346
+vecjoin	21	build	28.396
+vecjoin	21	probe	7354.76
+vecjoin	21	total	7383.15
+vecjoin based on prefetching optimization	21	build	9.481
+vecjoin based on prefetching optimization	21	probe	5530.32
+vecjoin based on prefetching optimization	21	total	5539.8
+hashjoin	21	build	510.709
+hashjoin	21	probe	226704
+hashjoin	21	total	227214
+vecjoin	22	build	53.368
+vecjoin	22	probe	7718
+vecjoin	22	total	7771.37
+vecjoin based on prefetching optimization	22	build	17.836
+vecjoin based on prefetching optimization	22	probe	6617.43
+vecjoin based on prefetching optimization	22	total	6635.27
+hashjoin	22	build	1029.54
+hashjoin	22	probe	404693
+hashjoin	22	total	405723
+vecjoin	23	build	119.391
+vecjoin	23	probe	20068.2
+vecjoin	23	total	20187.5
+vecjoin based on prefetching optimization	23	build	86.662
+vecjoin based on prefetching optimization	23	probe	24548.5
+vecjoin based on prefetching optimization	23	total	24635.2
+hashjoin	23	build	3780.21
+hashjoin	23	probe	339471
+hashjoin	23	total	343252
+vecjoin	24	build	119.043
+vecjoin	24	probe	14608.5
+vecjoin	24	total	14727.6
+vecjoin based on prefetching optimization	24	build	141.105
+vecjoin based on prefetching optimization	24	probe	15305.7
+vecjoin based on prefetching optimization	24	total	15446.8
+hashjoin	24	build	4350.77
+hashjoin	24	probe	340738
+hashjoin	24	total	345089
+vecjoin	25	build	301.134
+vecjoin	25	probe	13884.9
+vecjoin	25	total	14186
+vecjoin based on prefetching optimization	25	build	225.166
+vecjoin based on prefetching optimization	25	probe	16926.8
+vecjoin based on prefetching optimization	25	total	17152
+hashjoin	25	build	8917.08
+hashjoin	25	probe	341016
+hashjoin	25	total	349934
+vecjoin	26	build	507.819
+vecjoin	26	probe	15060.1
+vecjoin	26	total	15568
+vecjoin based on prefetching optimization	26	build	542.394
+vecjoin based on prefetching optimization	26	probe	16647.9
+vecjoin based on prefetching optimization	26	total	17190.3
+hashjoin	26	build	19025.6
+hashjoin	26	probe	340493
+hashjoin	26	total	359518
+vecjoin	27	build	899.485
+vecjoin	27	probe	14909.2
+vecjoin	27	total	15808.7
+vecjoin based on prefetching optimization	27	build	1268.11
+vecjoin based on prefetching optimization	27	probe	16401.2
+vecjoin based on prefetching optimization	27	total	17669.3
+hashjoin	27	build	38096.6
+hashjoin	27	probe	336164
+hashjoin	27	total	374260
+vecjoin	28	build	2813.97
+vecjoin	28	probe	15043
+vecjoin	28	total	17856.9
+vecjoin based on prefetching optimization	28	build	2478.22
+vecjoin based on prefetching optimization	28	probe	16692.5
+vecjoin based on prefetching optimization	28	total	19170.7
+hashjoin	28	build	81126.8
+hashjoin	28	probe	342503
+hashjoin	28	total	423629
+vecjoin	29	build	4678.27
+vecjoin	29	probe	14918.3
+vecjoin	29	total	19596.6
+vecjoin based on prefetching optimization	29	build	5582.09
+vecjoin based on prefetching optimization	29	probe	16564.4
+vecjoin based on prefetching optimization	29	total	22146.5
+hashjoin	29	build	170144
+hashjoin	29	probe	368148
+hashjoin	29	total	538292
+vecjoin	30	build	14636.4
+vecjoin	30	probe	14563.1
+vecjoin	30	total	29199.5
+vecjoin based on prefetching optimization	30	build	12508.5
+vecjoin based on prefetching optimization	30	probe	17675.7
+vecjoin based on prefetching optimization	30	total	30184.3
+hashjoin	30	build	381308
+hashjoin	30	probe	372978
+hashjoin	30	total	754286

@@ -1,0 +1,26 @@
+query model	Intermediate results	query model with different Intermediate results	selection rate	Rumtimes(ms)
+Row-wise model		Row-wise model	0	481.162
+Column-wise model	static vector	Column-wise model with static vector	0	1337.14
+Column-wise model	dynamic vector	Column-wise model with dynamic vector	0	6076.15
+Vector-wise model	static vector	Vector-wise model with static vector	0	1420.03
+Vector-wise model	dynamic vector	Vector-wise model with dynamic vector	0	5850.25
+Row-wise model		Row-wise model	-1	1082.47
+Column-wise model	static vector	Column-wise model with static vector	-1	2437.86
+Column-wise model	dynamic vector	Column-wise model with dynamic vector	-1	3678.61
+Vector-wise model	static vector	Vector-wise model with static vector	-1	2511.02
+Vector-wise model	dynamic vector	Vector-wise model with dynamic vector	-1	3949.1
+Row-wise model		Row-wise model	-2	543.093
+Column-wise model	static vector	Column-wise model with static vector	-2	1518.76
+Column-wise model	dynamic vector	Column-wise model with dynamic vector	-2	1705.63
+Vector-wise model	static vector	Vector-wise model with static vector	-2	1544.48
+Vector-wise model	dynamic vector	Vector-wise model with dynamic vector	-2	1884.82
+Row-wise model		Row-wise model	-3	380.099
+Column-wise model	static vector	Column-wise model with static vector	-3	1178.97
+Column-wise model	dynamic vector	Column-wise model with dynamic vector	-3	870.083
+Vector-wise model	static vector	Vector-wise model with static vector	-3	1173.87
+Vector-wise model	dynamic vector	Vector-wise model with dynamic vector	-3	1028.65
+Row-wise model		Row-wise model	-4	245.804
+Column-wise model	static vector	Column-wise model with static vector	-4	997.725
+Column-wise model	dynamic vector	Column-wise model with dynamic vector	-4	506.204
+Vector-wise model	static vector	Vector-wise model with static vector	-4	1011.51
+Vector-wise model	dynamic vector	Vector-wise model with dynamic vector	-4	625.841

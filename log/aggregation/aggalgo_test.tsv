@@ -1,0 +1,6 @@
+Aggregation algorithm	Runtimes(ms)
+Row-wise model	99.747
+Column-wise model	380.862
+Vector-wise model	255.8
+Column-wise model with SIMD	72.194
+Vector-wise model with SIMD	74.779

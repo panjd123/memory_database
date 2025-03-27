@@ -1,0 +1,321 @@
+Query Processing Model	Materialization strategy	Intermediate Result Type	Final Result Type	Query Processing Model with different Materialization strategy、Intermediate Result Type and Final Result Type	Selection Rate	Runtimes(ms)
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.1	1463.11
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.2	1433.31
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.3	1738.87
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.4	2025.98
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.5	2579.33
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.6	2222.27
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.7	2464.58
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.8	2926.86
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	0.9	2883.4
+Row-wise query processing model in cache			dynamic vector final result	proalgo_rowwise_rwmic_dvf	1	2831.39
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.1	768.615
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.2	944.287
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.3	1047.79
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.4	961.83
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.5	895.506
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.6	842.981
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.7	788.046
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.8	742.998
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	0.9	691.16
+Row-wise query processing model in cache			fixed vector final result	proalgo_rowwise_rwmic_fvf	1	625.024
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.1	1698.02
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.2	1578.2
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.3	1833.6
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.4	2044.64
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.5	2195.2
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.6	2361.94
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.7	2558.2
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.8	2552.26
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	0.9	2719.63
+Row-wise query processing model out of cache			dynamic vector final result	proalgo_rowwise_rwmoc_dvf	1	2846.71
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.1	731.818
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.2	949.477
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.3	1009.17
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.4	956.958
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.5	896.515
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.6	847.406
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.7	795.069
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.8	762.612
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	0.9	722.67
+Row-wise query processing model out of cache			fixed vector final result	proalgo_rowwise_rwmoc_fvf	1	652.236
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.1	1065.88
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.2	1311.5
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.3	1415.54
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.4	1410.75
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.5	1395.42
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.6	1380.21
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.7	1371.01
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.8	1353.28
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	0.9	1374.45
+Column-wise query processing	early materialization strategy		dynamic vector final result	proalgo_cwm_em_dvf	1	1315.85
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.1	724.299
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.2	1005.54
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.3	1114.08
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.4	1079.54
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.5	1053.67
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.6	1000.46
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.7	926.195
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.8	877.361
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	0.9	822.151
+Column-wise query processing	early materialization strategy		fixed vector final result	proalgo_cwm_em_fvf	1	808.992
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.1	3362.76
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.2	4613.82
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.3	5433.93
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.4	6061.77
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.5	6505.3
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.6	6749.44
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.7	7001.19
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.8	7228.87
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	0.9	7425.84
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_idvi_dvf	1	7591.1
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.1	3227.2
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.2	4247.48
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.3	4956.02
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.4	5333.51
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.5	5545.33
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.6	5627.67
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.7	5683.87
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.8	5767.02
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	0.9	5778.47
+Column-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_idvi_fvf	1	5711.12
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.1	1717.53
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.2	2530.92
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.3	3066.85
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.4	3534.14
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.5	3811.91
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.6	4116.97
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.7	4395.83
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.8	4690.66
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	0.9	5039.23
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sdvi_dvf	1	5258.13
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.1	1518.36
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.2	2138.18
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.3	2487.56
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.4	2677.07
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.5	2898.11
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.6	2924.89
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.7	3050.21
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.8	3109.71
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	0.9	3202.67
+Column-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_cwm_lm_sdvi_fvf	1	3264.59
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.1	1513.71
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.2	2120.69
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.3	2454.07
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.4	2660.61
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.5	2819.66
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.6	2964.78
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.7	2999.27
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.8	3104.74
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	0.9	3147.26
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_ifvi_dvf	1	3244.51
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.1	1327.05
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.2	1727.54
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.3	1858.17
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.4	1879.84
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.5	1906.52
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.6	1704.4
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.7	1591.3
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.8	1479.4
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	0.9	1344.17
+Column-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_ifvi_fvf	1	1745.57
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.1	1429.83
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.2	1907.04
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.3	1694.04
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.4	1878.86
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.5	2087.36
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.6	2264.48
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.7	2461.78
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.8	2629.78
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	0.9	2822.06
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_cwm_lm_sfvi_dvf	1	3148.65
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.1	732.822
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.2	1006.31
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.3	1104.84
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.4	1083.18
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.5	1054.79
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.6	1041.23
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.7	1016.69
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.8	1018.3
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	0.9	1014.31
+Column-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_cwm_lm_sfvi_fvf	1	1033.09
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.1	1081.65
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.2	1393.21
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.3	1747.45
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.4	2082.16
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.5	2337.41
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.6	2516.57
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.7	2959.42
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.8	2797.57
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	0.9	2918.Column-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_ibmpi_dvf	1	2987.05
+18
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.1	866.981
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.2	967.297
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.3	1098.23
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.4	1200.47
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.5	1231.8
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.6	1205.04
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.7	1147.5
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.8	1101.51
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	0.9	1066.28
+Column-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_ibmpi_fvf	1	1030.77
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.1	1171.12
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.2	1665.89
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.3	2214.84
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.4	2348.78
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.5	2500
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.6	2601.42
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.7	2649.26
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.8	2684.52
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	0.9	2767.43
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_cwm_lm_sbmpi_dvf	1	2847.38
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.1	972.096
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.2	1239.18
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.3	1372.41
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.4	1403.26
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.5	1363.3
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.6	1259.27
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.7	1234.5
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.8	1073.12
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	0.9	935.227
+Column-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_cwm_lm_sbmpi_fvf	1	882.906
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.1	923.816
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.2	1252.62
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.3	1372.71
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.4	1377.38
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.5	1360.06
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.6	1351.22
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.7	1342.13
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.8	1328.45
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	0.9	1305.2
+Vector-wise query processing	early materialization strategy		dynamic vector final result	proalgo_vwm_em_dvf	1	1292.83
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.1	687.921
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.2	966.584
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.3	1062.64
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.4	1051.55
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.5	1001.18
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.6	1302.01
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.7	915.254
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.8	885.201
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	0.9	823.278
+Vector-wise query processing	early materialization strategy		fixed vector final result	proalgo_vwm_em_fvf	1	1126.8
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.1	3596.1
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.2	4626.63
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.3	5367.32
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.4	5973.64
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.5	6432.91
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.6	6687.91
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.7	7046.14
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.8	7245.93
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	0.9	7358.41
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_idvi_dvf	1	7662.17
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.1	3225.85
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.2	4230.6
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.3	4839.94
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.4	5320.79
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.5	5439.29
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.6	5505.11
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.7	5540.16
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.8	6837.62
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	0.9	6055.68
+Vector-wise query processing	late materialization strategy	independent dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_idvi_fvf	1	5584.05
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.1	1681.25
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.2	2506.82
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.3	3049.57
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.4	3438.97
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.5	3846.6
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.6	4319.72
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.7	4621.02
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.8	4655.48
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	0.9	4942.77
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sdvi_dvf	1	5249.18
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.1	1550.61
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.2	2071.11
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.3	2402.88
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.4	2576.79
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.5	2675.07
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.6	2761.15
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.7	2835.99
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.8	3041.26
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	0.9	3134.25
+Vector-wise query processing	late materialization strategy	shared dynamic vector intermediate results	fixed vector final result	proalgo_vwm_lm_sdvi_fvf	1	3000.17
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.1	1445.51
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.2	2041.22
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.3	2375.02
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.4	2585.61
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.5	2714.24
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.6	2799.78
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.7	2875.99
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.8	2990.8
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	0.9	3089.5
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_ifvi_dvf	1	3093.44
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.1	1264.97
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.2	1666.81
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.3	1809.1
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.4	1799.85
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.5	1702.94
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.6	2277.06
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.7	2282.07
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.8	1439.3
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	0.9	1320.72
+Vector-wise query processing	late materialization strategy	independent fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_ifvi_fvf	1	1076.98
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.1	902.97
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.2	1351.72
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.3	1632.95
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.4	1790.43
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.5	1970.01
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.6	2141.88
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.7	2322.51
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.8	2514.88
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	0.9	2701.11
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	dynamic vector final result	proalgo_vwm_lm_sfvi_dvf	1	2873.26
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.1	686.769
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.2	951.605
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.3	1032.43
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.4	1020.62
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.5	989.776
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.6	1363.26
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.7	1466.09
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.8	1151.33
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	0.9	902.477
+Vector-wise query processing	late materialization strategy	shared fixed vector intermediate results	fixed vector final result	proalgo_vwm_lm_sfvi_fvf	1	1373.46
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.1	1139.34
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.2	1333.12
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.3	1688.84
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.4	2019.64
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.5	2291.25
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.6	2454.34
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.7	2593.15
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.8	2700.21
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	0.9	2845.55
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_ibmpi_dvf	1	2973.72
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.1	822.772
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.2	936.014
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.3	1034.63
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.4	1145.88
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.5	1190.55
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.6	1158.19
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.7	1232.24
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.8	1057.04
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	0.9	1156.19
+Vector-wise query processing	late materialization strategy	independent bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_ibmpi_fvf	1	1172.66
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.1	1129.15
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.2	1619.51
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.3	1992.2
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.4	2290.69
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.5	2493.49
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.6	2592.07
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.7	2640.94
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.8	2689.36
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	0.9	2758.89
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	dynamic vector final result	proalgo_vwm_lm_sbmpi_dvf	1	2828.97
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.1	936.603
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.2	1238.7
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.3	1396.74
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.4	1385.75
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.5	1329.91
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.6	1229.94
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.7	1589.49
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.8	1592.17
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	0.9	1447.18
+Vector-wise query processing	late materialization strategy	shared bitmap intermediate results	fixed vector final result	proalgo_vwm_lm_sbmpi_fvf	1	880.168
