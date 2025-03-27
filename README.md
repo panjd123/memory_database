@@ -30,7 +30,7 @@
 ├── obj/
 |—— log/
 └── makefile
-
+```
 ## 依赖
 本项目依赖以下库和工具：
 - GCC (g++) 版本10.3.0或更高
@@ -48,10 +48,8 @@ cmake -DCMAKE_INSTALL_PREFIX=/path/hrc2/to/arrow -DARROW_PARQUET=ON -DARROW_CSV=
 使用提供的Makefile来编译项目：
 
 1. 编译所有模块：
-   ```bash
    make ALL
 2. 编译特定模块（例如select_test）：
-    ```bash
    make select_test
 
 ## 模块说明
