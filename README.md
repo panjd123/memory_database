@@ -14,6 +14,7 @@
 ## 项目结构
 
 项目的主要结构如下：
+ ```bash
 ├── code/
 │   ├── select/
 │   ├── project/
@@ -23,12 +24,12 @@
 │   ├── starjoin/
 │   ├── OLAPcore/
 |   |—— GPU_OLAPcore/
-│   ├── final_test/
-│   └── final_test_9/
+│   ├── TPCH_Q5/
+│   └── TPCH_Q5_operator/
 ├── include/
 ├── obj/
 |—— log/
-└── Makefile
+└── makefile
 
 ## 依赖
 本项目依赖以下库和工具：
@@ -94,11 +95,11 @@ sh OLAPcore.sh
 sh GPU_OLAPcore.sh
 测试完成后的日志文件在./log/GPU_OLAPcore中 可更换./POWER_BI/GPU_OLAPcore_test中的pbix的源数据文件来可视化展示GPU_OLAP核心功能性能
 - TPCH_Q5
-unzip dbgen.zip && cd ./dbgen && ./dbgen -vf -s 1 && cd .. && python convert.py（生成和处理数据）
+cd ./dbgen && ./dbgen -vf -s 1 && cd .. && python convert.py（生成和处理数据）
 ./TPCH_Q5_test 参数示例参照实验报告
 测试结束后打印测试结果
 - TPCH_Q5_operator
-./TPCH_Q5_operator
+./TPCH_Q5_operator_test
 测试结果的日志文件存储在./log/TPCH_Q5_operator中
 
 ## 清理
