@@ -1,0 +1,7 @@
+Method,Time,TotalSum
+rowwise,8.2905,4.83234e+06
+rowwise_register,8.28826,4.83234e+06
+columnwise_dynamic_vector,12.8869,4.83233e+06
+columnwise_static_vector,20.1468,4.83233e+06
+vectorwise_dynamic_vector,9.44384,4.83233e+06
+vectorwise_static_vector,11.5878,4.83233e+06
