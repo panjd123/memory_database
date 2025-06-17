@@ -3,6 +3,7 @@
 #include <cuda_runtime.h>
 #include <curand.h>
 #include <curand_kernel.h>
+#include <nvtx3/nvToolsExt.h>
 #include <fstream>
 #include <iostream>
 #include <random>
@@ -10,6 +11,8 @@
 #include "utils.cuh"
 
 namespace SSB {
+constexpr int BLOCK_SIZE = 1024;
+constexpr int GRID_SIZE = 128;
 enum class TABLE_NAME {
     CUSTOMER = 0,
     SUPPLIER,
@@ -18,8 +21,8 @@ enum class TABLE_NAME {
     LINEORDER
 };
 const size_t LINEORDER_BASE = 6000000;  // lineorder base num
-const size_t CUSTOMER_BASE = 30000;     // customer base num
-const size_t SUPPLIER_BASE = 2000;      // supplier base num
+const size_t CUSTOMER_BASE = 1000000;     // customer base num
+const size_t SUPPLIER_BASE = 1000000;      // supplier base num
 const size_t PART_BASE = 200000;        // part base num
 const size_t DATE_BASE = 7 * 365;       // date base num
 inline int size_of_table(const TABLE_NAME& table, const double& SF) {
@@ -128,8 +131,8 @@ Arguments generate(int argc, char** argv) {
             h_orders[args.params.dimVecNum - 1] = i;
         }
     }
-    std::sort(h_orders, h_orders + args.params.dimVecNum, [&args](int a, int b) {
-        return args.selectRate[a] < args.selectRate[b];
+    std::sort(h_orders, h_orders + args.params.dimVecNum, [&args, &dimVecSizes](int a, int b) {
+        return args.selectRate[a] == args.selectRate[b] ? dimVecSizes[a] < dimVecSizes[b] : args.selectRate[a] < args.selectRate[b];
     });
 
     args.params.dimVec_array = Gather<int8_t*>([dim_tables](int i) { return dim_tables[i].d_dimVec; }, dimTableNum);
@@ -187,7 +190,6 @@ __global__ void OLAPcore_rowwise_kernel(Params params) {
             int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][i]];
             if (idx_flag != DIM_NULL) {
                 groupID += idx_flag * params.factor[j];
-                continue;
             } else {
                 flag = 0;
                 groupID = 0;
@@ -250,16 +252,16 @@ __global__ void OLAPcore_rowwise_register_kernel(Params params) {
 }
 
 void OLAPcore_rowwise(Params& params) {
-    dim3 block(1024);
+    dim3 block(BLOCK_SIZE);
     // dim3 grid((params.size_lineorder + block.x - 1) / block.x);
-    dim3 grid(128);
+    dim3 grid(GRID_SIZE);
     OLAPcore_rowwise_kernel<<<grid, block>>>(params);
 }
 
 void OLAPcore_rowwise_register(Params& params) {
-    dim3 block(1024);
+    dim3 block(BLOCK_SIZE);
     // dim3 grid((params.size_lineorder + block.x - 1) / block.x);
-    dim3 grid(128);
+    dim3 grid(GRID_SIZE);
     if (params.groupNum <= 64) {
         OLAPcore_rowwise_register_kernel<64><<<grid, block>>>(params);
     } else if (params.groupNum <= 128) {
@@ -274,8 +276,13 @@ __global__ void OLAPcore_columnwise_dv_kernel(Params params) {
     int32_t store_idx = idx;
     int32_t store_end;
     int32_t stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
     for (int j = 0; j < params.dimVecNum; j++) {
-        if (!j) {
+        if (j == 0) {
             for (int k = idx; k < params.size_lineorder; k += stride) {
                 int table_index = params.orders[j];
                 int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
@@ -294,7 +301,7 @@ __global__ void OLAPcore_columnwise_dv_kernel(Params params) {
                 int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][location]];
                 if (idx_flag != DIM_NULL) {
                     params.OID[store_idx] = location;
-                    params.groupID[store_idx] += idx_flag * params.factor[j];
+                    params.groupID[store_idx] = params.groupID[k] + idx_flag * params.factor[j];
                     store_idx += stride;
                 }
             }
@@ -304,17 +311,90 @@ __global__ void OLAPcore_columnwise_dv_kernel(Params params) {
     for (store_idx = idx; store_idx < store_end; store_idx += stride) {
         int16_t tmp = params.groupID[store_idx];
         float sum = params.M1[params.OID[store_idx]] + params.M2[params.OID[store_idx]];
-        atomicAdd(&params.ans[tmp], sum);
+        // atomicAdd(&params.ans[tmp], sum);
+        atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
+    }
+}
+
+__global__ void OLAPcore_columnwise_dv_step_kernel(Params params) {
+    int32_t idx = threadIdx.x + blockIdx.x * blockDim.x;
+    int32_t store_idx = idx;
+    int32_t store_end;
+    int32_t stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
+    for (int j = 0; j < params.dimVecNum; j++) {
+        if (j == 0) {
+            for (int k = idx; k < params.size_lineorder; k += stride) {
+                int table_index = params.orders[j];
+                int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
+                int step = 0;
+                if (idx_flag != DIM_NULL) {
+                    params.OID[store_idx] = k;
+                    params.groupID[store_idx] = idx_flag * params.factor[j];
+                    step = 1;
+                }
+                step |= __shfl_xor_sync(0xffffffff, step, 1); // 交换相邻的
+                if (step) {
+                    if (idx_flag == DIM_NULL) {
+                        params.groupID[store_idx] = GROUP_NULL;
+                    }
+                    store_idx += stride;
+                }
+            }
+        } else {
+            store_end = store_idx;
+            store_idx = idx;
+            for (int k = idx; k < store_end; k += stride) {
+                int group_id = params.groupID[k];
+                // int step = 0;
+                int location = params.OID[k];
+                int table_index = params.orders[j];
+                int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][location]];
+                if (idx_flag != DIM_NULL) {
+                    if(group_id != GROUP_NULL){
+                        params.OID[store_idx] = location;
+                        params.groupID[store_idx] = group_id + idx_flag * params.factor[j];
+                        store_idx += stride;
+                    }
+                }
+            }
+        }
+    }
+    store_end = store_idx;
+    for (store_idx = idx; store_idx < store_end; store_idx += stride) {
+        int16_t tmp = params.groupID[store_idx];
+        if (tmp != GROUP_NULL) {
+            float sum = params.M1[params.OID[store_idx]] + params.M2[params.OID[store_idx]];
+            // atomicAdd(&params.ans[tmp], sum);
+            atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
+        }
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
     }
 }
 
 __global__ void OLAPcore_columnwise_sv_kernel(Params params) {
     int32_t idx = threadIdx.x + blockIdx.x * blockDim.x;
     int32_t stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
     for (int j = 0; j < params.dimVecNum; j++) {
-        if (!j) {
+        int table_index = params.orders[j];
+        if (j == 0) {
             for (int k = idx; k < params.size_lineorder; k += stride) {
-                int table_index = params.orders[j];
                 int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
                 if (idx_flag != DIM_NULL) {
                     params.groupID[k] = idx_flag * params.factor[j];
@@ -324,39 +404,46 @@ __global__ void OLAPcore_columnwise_sv_kernel(Params params) {
             }
         } else {
             for (int k = idx; k < params.size_lineorder; k += stride) {
-                if (params.groupID[k] == GROUP_NULL) {
-                    continue;
-                }
-                int table_index = params.orders[j];
-                int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
-                if (idx_flag != DIM_NULL) {
-                    params.groupID[k] += idx_flag * params.factor[j];
-                } else {
-                    params.groupID[k] = GROUP_NULL;
+                if (params.groupID[k] != GROUP_NULL) {
+                    int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
+                    if (idx_flag != DIM_NULL) {
+                        params.groupID[k] += idx_flag * params.factor[j];
+                    } else {
+                        params.groupID[k] = GROUP_NULL;
+                    }
                 }
             }
         }
     }
     for (int k = idx; k < params.size_lineorder; k += stride) {
         int16_t tmp = params.groupID[k];
-        if (tmp == GROUP_NULL) {
-            continue;  // Skip if groupID is NULL
+        if (tmp != GROUP_NULL) {
+            float sum = params.M1[k] + params.M2[k];
+            atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
         }
-        float sum = params.M1[k] + params.M2[k];
-        atomicAdd(&params.ans[tmp], sum);
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
     }
 }
 
 void OLAPcore_columnwise_dv(Params& params) {
-    dim3 block(1024);
-    dim3 grid(128);
+    dim3 block(BLOCK_SIZE);
+    dim3 grid(GRID_SIZE);
     OLAPcore_columnwise_dv_kernel<<<grid, block>>>(params);
 }
 
 void OLAPcore_columnwise_sv(Params& params) {
-    dim3 block(1024);
-    dim3 grid(128);
+    dim3 block(BLOCK_SIZE);
+    dim3 grid(GRID_SIZE);
     OLAPcore_columnwise_sv_kernel<<<grid, block>>>(params);
+}
+
+void OLAPcore_columnwise_dv_step(Params& params) {
+    dim3 block(BLOCK_SIZE);
+    dim3 grid(GRID_SIZE);
+    OLAPcore_columnwise_dv_step_kernel<<<grid, block>>>(params);
 }
 
 template <int VectorSize = 32>
@@ -365,12 +452,17 @@ __global__ void OLAPcore_vectorwise_dv_kernel(Params params) {
     int16_t groupID[VectorSize];
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
     int stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
     for (int32_t block_start = idx; block_start < params.size_lineorder; block_start += VectorSize * stride) {
         int block_end = min(block_start + VectorSize * stride, params.size_lineorder);
         int store_local_k = 0;
         int store_local_end = 0;
         for (int j = 0; j < params.dimVecNum; j++) {
-            if (!j) {
+            if (j == 0) {
                 for (int k = block_start; k < block_end; k += stride) {
                     int table_index = params.orders[j];
                     int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
@@ -389,7 +481,7 @@ __global__ void OLAPcore_vectorwise_dv_kernel(Params params) {
                     int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][location]];
                     if (idx_flag != DIM_NULL) {
                         OID[store_local_k] = location;
-                        groupID[store_local_k] += idx_flag * params.factor[j];
+                        groupID[store_local_k] = groupID[last_local_k] + idx_flag * params.factor[j];
                         store_local_k++;
                     }
                 }
@@ -399,8 +491,13 @@ __global__ void OLAPcore_vectorwise_dv_kernel(Params params) {
         for (store_local_k = 0; store_local_k < store_local_end; ++store_local_k) {
             int16_t tmp = groupID[store_local_k];
             float sum = params.M1[OID[store_local_k]] + params.M2[OID[store_local_k]];
-            atomicAdd(&params.ans[tmp], sum);
+            // atomicAdd(&params.ans[tmp], sum);
+            atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
         }
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
     }
 }
 
@@ -409,12 +506,17 @@ __global__ void OLAPcore_vectorwise_sv_kernel(Params params) {
     int16_t groupID[VectorSize];
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
     int stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
     for (int32_t block_start = idx; block_start < params.size_lineorder; block_start += VectorSize * stride) {
         int block_end = min(block_start + VectorSize * stride, params.size_lineorder);
         for (int j = 0; j < params.dimVecNum; j++) {
-            if (!j) {
+            int table_index = params.orders[j];
+            if (j == 0) {
                 for (int k = block_start, local_k = 0; k < block_end; k += stride, ++local_k) {
-                    int table_index = params.orders[j];
                     int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
                     if (idx_flag != DIM_NULL) {
                         groupID[local_k] = idx_flag * params.factor[j];
@@ -424,39 +526,41 @@ __global__ void OLAPcore_vectorwise_sv_kernel(Params params) {
                 }
             } else {
                 for (int k = block_start, local_k = 0; k < block_end; k += stride, ++local_k) {
-                    if (groupID[local_k] == GROUP_NULL) {
-                        continue;
-                    }
-                    int table_index = params.orders[j];
-                    int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
-                    if (idx_flag != DIM_NULL) {
-                        groupID[local_k] += idx_flag * params.factor[j];
-                    } else {
-                        groupID[local_k] = GROUP_NULL;
+                    if (groupID[local_k] != GROUP_NULL) {
+                        int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][k]];
+                        if (idx_flag != DIM_NULL) {
+                            groupID[local_k] += idx_flag * params.factor[j];
+                        } else {
+                            groupID[local_k] = GROUP_NULL;
+                        }
                     }
                 }
             }
         }
         for (int k = block_start, local_k = 0; k < block_end; k += stride, ++local_k) {
             int16_t tmp = groupID[local_k];
-            if (tmp == GROUP_NULL) {
-                continue;  // Skip if groupID is NULL
+            if (tmp != GROUP_NULL) {
+                float sum = params.M1[k] + params.M2[k];
+                // atomicAdd(&params.ans[tmp], sum);
+                atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
             }
-            float sum = params.M1[k] + params.M2[k];
-            atomicAdd(&params.ans[tmp], sum);
         }
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
     }
 }
 
 void OLAPcore_vectorwise_dv(Params& params) {
-    dim3 block(1024);
-    dim3 grid(128);
+    dim3 block(BLOCK_SIZE);
+    dim3 grid(GRID_SIZE);
     OLAPcore_vectorwise_dv_kernel<<<grid, block>>>(params);
 }
 
 void OLAPcore_vectorwise_sv(Params& params) {
-    dim3 block(1024);
-    dim3 grid(128);
+    dim3 block(BLOCK_SIZE);
+    dim3 grid(GRID_SIZE);
     OLAPcore_vectorwise_sv_kernel<<<grid, block>>>(params);
 }
 
@@ -464,6 +568,9 @@ std::pair<float, float> timeit(void (*func)(Params&), Params& params) {
     for (int i = 0; i < warmup; i++) {
         func(params);
     }
+    nvtxRangePushA("profile");
+    func(params);
+    nvtxRangePop();
     cudaEvent_t start, stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
@@ -494,18 +601,20 @@ void benchmark(Arguments& args) {
     result_table.add_row({"Method", "Time", "TotalSum"});
     auto [time_rowwise, sum_rowwise] = timeit(OLAPcore_rowwise, args.params);
     result_table.add_row(tabulate::RowStream{} << "rowwise" << time_rowwise << sum_rowwise);
-    auto [time_rowwise_register, sum_rowwise_register] = timeit(OLAPcore_rowwise_register, args.params);
-    result_table.add_row(tabulate::RowStream{} << "rowwise_register" << time_rowwise_register << sum_rowwise_register);
+    // auto [time_rowwise_register, sum_rowwise_register] = timeit(OLAPcore_rowwise_register, args.params);
+    // result_table.add_row(tabulate::RowStream{} << "rowwise_register" << time_rowwise_register << sum_rowwise_register);
     auto [time_columnwise_dv, sum_columnwise_dv] = timeit(OLAPcore_columnwise_dv, args.params);
     result_table.add_row(tabulate::RowStream{} << "columnwise_dynamic_vector" << time_columnwise_dv << sum_columnwise_dv);
     auto [time_columnwise_sv, sum_columnwise_sv] = timeit(OLAPcore_columnwise_sv, args.params);
     result_table.add_row(tabulate::RowStream{} << "columnwise_static_vector" << time_columnwise_sv << sum_columnwise_sv);
+    auto [time_columnwise_dv_step, sum_columnwise_dv_step] = timeit(OLAPcore_columnwise_dv_step, args.params);
+    result_table.add_row(tabulate::RowStream{} << "columnwise_dynamic_vector_step" << time_columnwise_dv_step << sum_columnwise_dv_step);
     auto [time_vectorwise_dv, sum_vectorwise_dv] = timeit(OLAPcore_vectorwise_dv, args.params);
     result_table.add_row(tabulate::RowStream{} << "vectorwise_dynamic_vector" << time_vectorwise_dv << sum_vectorwise_dv);
     auto [time_vectorwise_sv, sum_vectorwise_sv] = timeit(OLAPcore_vectorwise_sv, args.params);
     result_table.add_row(tabulate::RowStream{} << "vectorwise_static_vector" << time_vectorwise_sv << sum_vectorwise_sv);
     std::cout << result_table << std::endl;
-    export_to_csv(result_table, "benchmark_results_" + args.testCase + ".csv");
+    export_to_csv(result_table, "SSB_benchmark_" + args.testCase + ".csv");
 }
 
 };  // namespace SSB

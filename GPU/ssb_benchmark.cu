@@ -1,6 +1,5 @@
 #include "utils.cuh"
 #include "SSB.cuh"
-#include "TPCH.cuh"
 #include <cuda_runtime.h>
 
 int main(int argc, char** argv) {

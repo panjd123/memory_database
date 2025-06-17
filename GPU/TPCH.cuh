@@ -7,6 +7,7 @@
 #include <iostream>
 #include <random>
 #include <ranges>
+#include <nvtx3/nvToolsExt.h>
 #include "argparse.hpp"
 #include "tabulate.hpp"
 #include "utils.cuh"
@@ -25,7 +26,7 @@ enum class TABLE_NAME {
 
 const size_t ORDERS_BASE = 1500000;    // orders base num
 const size_t LINEITEM_BASE = 6000000;  // lineitem base num
-const size_t PARTSUPP_BASE = 8000000;  // partsupp base num
+const size_t PARTSUPP_BASE = 800000;  // partsupp base num
 const size_t CUSTOMER_BASE = 150000;   // customer base num
 const size_t PART_BASE = 200000;       // part base num
 const size_t SUPPLIER_BASE = 10000;    // supplier base num
@@ -278,10 +279,74 @@ void Q5_rowwise(Params& params) {
     }
 }
 
+__global__ void Q5_columnwise_dv_kernel(Params params) {
+    int32_t idx = threadIdx.x + blockIdx.x * blockDim.x;
+    int32_t store_idx = idx;
+    int32_t store_end;
+    int32_t stride = blockDim.x * gridDim.x;
+    __shared__ float result_tmp[1000];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
+    
+    for (int k = idx; k < params.size_lineitem; k += stride) {
+        int groupID = params.n_dimVec[params.n_foreignKey[params.s_foreignKey[k]]];
+        if (groupID == DIM_NULL) {
+            continue;
+        }
+        params.OID[store_idx] = k;
+        params.groupID[store_idx] = groupID;
+        store_idx += stride;
+    }
+
+    store_end = store_idx;
+    store_idx = idx;
+    for (int k = idx; k < store_end; k += stride) {
+        int location = params.OID[k];
+        int8_t idx_flag = params.o_dimVec[params.o_foreignKey[location]];
+        if (idx_flag != DIM_NULL) {
+            params.OID[store_idx] = location;
+            params.groupID[store_idx] = params.groupID[k];
+            store_idx += stride;
+        }
+    }
+
+    store_end = store_idx;
+    for (store_idx = idx; store_idx < store_end; store_idx += stride) {
+        int16_t tmp = params.groupID[store_idx];
+        float sum = params.M1[params.OID[store_idx]] * (1 - params.M2[params.OID[store_idx]]);
+        atomicAdd(&result_tmp[tmp], sum);  // Use local memory for atomic operations
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);  // Write the final result to global memory
+    }
+}
+
+void Q5_columnwise(Params& params) {
+    dim3 block(1024);
+    dim3 grid(128);
+    if (params.pre_s) {
+        prepare_S_dimvec(params);  // Prepare S's dimVec before kernel launch
+    }
+    Q5_columnwise_dv_kernel<<<grid, block>>>(params);
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+        std::cerr << "CUDA error in Q5_columnwise: " << cudaGetErrorString(err) << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+
 std::pair<float, float> timeit(void (*func)(Params&), Params& params) {
     for (int i = 0; i < warmup; i++) {
         func(params);
     }
+
+    nvtxRangePushA("profile");
+    func(params);
+    nvtxRangePop();
+
     cudaEvent_t start, stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
@@ -328,8 +393,12 @@ void benchmark(Arguments& args) {
         result_table.add_row({"RowwiseO_P", std::to_string(time_rowwise_ofirst), std::to_string(sum_rowwise_ofirst)});
         result_table.add_row({"RowwiseS_P", std::to_string(time_rowwise_sfirst), std::to_string(sum_rowwise_sfirst)});
     }
+    {
+        auto [time_columnwise_dv, sum_columnwise_dv] = timeit(Q5_columnwise, args.params);
+        result_table.add_row({"ColumnwiseDV", std::to_string(time_columnwise_dv), std::to_string(sum_columnwise_dv)});
+    }
     std::cout << result_table << std::endl;
-    export_to_csv(result_table, "TPCH_Q5_results.csv");
+    export_to_csv(result_table, "TPCH_benchmark_" + args.testCase + ".csv");
 }
 
 }  // namespace TPCH

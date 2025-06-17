@@ -67,7 +67,7 @@ cudaStream_t generate_bitmap(T* d_array, float selectRate, int groupNum, int siz
     return stream;
 }
 
-constexpr unsigned long seed = 1234;  // Seed for random number generation
+constexpr unsigned long seed = 2025;  // Seed for random number generation
 
 template <typename T, typename Func = std::function<T(int)>>
 T* Gather(Func func, int count) {
@@ -196,5 +196,4 @@ void export_to_csv(tabulate::Table& table, const std::string& filename) {
 }
 
 
-constexpr int warmup = 2;
-constexpr int runs = 10;
+#include "params.h"
