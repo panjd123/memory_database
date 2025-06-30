@@ -21,8 +21,8 @@ enum class TABLE_NAME {
     LINEORDER
 };
 const size_t LINEORDER_BASE = 6000000;  // lineorder base num
-const size_t CUSTOMER_BASE = 1000000;     // customer base num
-const size_t SUPPLIER_BASE = 1000000;      // supplier base num
+const size_t CUSTOMER_BASE = 30000;     // customer base num
+const size_t SUPPLIER_BASE = 2000;      // supplier base num
 const size_t PART_BASE = 200000;        // part base num
 const size_t DATE_BASE = 7 * 365;       // date base num
 inline int size_of_table(const TABLE_NAME& table, const double& SF) {
@@ -178,28 +178,77 @@ void init_ans(Params& params) {
 __global__ void OLAPcore_rowwise_kernel(Params params) {
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
     __shared__ float result_tmp[1000];
-    int groupID = 0;
     for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
         result_tmp[i] = 0;
     }
     __syncthreads();
     for (int i = idx; i < params.size_lineorder; i += blockDim.x * gridDim.x) {
+        int groupID = 0;
         int flag = 1;
         for (int j = 0; j < params.dimVecNum; j++) {
-            int table_index = params.orders[j];
-            int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][i]];
-            if (idx_flag != DIM_NULL) {
-                groupID += idx_flag * params.factor[j];
-            } else {
-                flag = 0;
-                groupID = 0;
-                break;
+            if(flag){
+                int table_index = params.orders[j];
+                int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][i]];
+                if (idx_flag != DIM_NULL) {
+                    groupID += idx_flag * params.factor[j];
+                } else {
+                    flag = 0;
+                }
+            }
+            // if (idx_flag != DIM_NULL) {
+            //     groupID += idx_flag * params.factor[j];
+            // } else {
+            //     flag = 0;
+            //     break;
+            // }
+        }
+        if (flag) {
+            float sum = params.M1[i] + params.M2[i];
+            atomicAdd(&result_tmp[groupID], sum);
+        }
+    }
+    __syncthreads();
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        atomicAdd(&params.ans[i], result_tmp[i]);
+    }
+}
+
+__device__ void global_to_shared_int8(int8_t* global_ptr, int8_t* shared_ptr, int idx, int size) {
+    int local_idx = threadIdx.x + blockDim.x * idx;
+    using AccessType = float4;
+    for (int i = local_idx; i < size; i += blockDim.x * gridDim.x * sizeof(float4)) {
+        AccessType value;
+        value = *reinterpret_cast<AccessType*>(global_ptr + i);
+        *reinterpret_cast<AccessType*>(shared_ptr + i) = value;
+    }
+}
+
+template <int VectorSize = SUPPLIER_BASE * 100>
+__global__ void OLAPcore_rowwise_xn_kernel(Params params) {
+    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+    __shared__ float result_tmp[1000];
+    // __shared__ int8_t dimVec0[VectorSize];
+    for (int i = threadIdx.x; i < params.groupNum; i += blockDim.x) {
+        result_tmp[i] = 0;
+    }
+    __syncthreads();
+    for (int i = idx; i < params.size_lineorder; i += blockDim.x * gridDim.x) {
+        int groupID = 0;
+        int flag = 1;
+        for (int j = 0; j < params.dimVecNum; j++) {
+            if(flag){
+                int table_index = params.orders[j];
+                int8_t idx_flag = params.dimVec_array[table_index][params.foreignKey_array[table_index][i]];
+                if (idx_flag != DIM_NULL) {
+                    groupID += idx_flag * params.factor[j];
+                } else {
+                    flag = 0;
+                }
             }
         }
         if (flag) {
             float sum = params.M1[i] + params.M2[i];
             atomicAdd(&result_tmp[groupID], sum);
-            groupID = 0;
         }
     }
     __syncthreads();
@@ -269,6 +318,13 @@ void OLAPcore_rowwise_register(Params& params) {
     } else {
         OLAPcore_rowwise_kernel<<<grid, block>>>(params);
     }
+}
+
+void OLAPcore_rowwise_xn(Params& params) {
+    dim3 block(BLOCK_SIZE);
+    // dim3 grid((params.size_lineorder + block.x - 1) / block.x);
+    dim3 grid(GRID_SIZE);
+    OLAPcore_rowwise_xn_kernel<<<grid, block>>>(params);
 }
 
 __global__ void OLAPcore_columnwise_dv_kernel(Params params) {
@@ -603,6 +659,8 @@ void benchmark(Arguments& args) {
     result_table.add_row(tabulate::RowStream{} << "rowwise" << time_rowwise << sum_rowwise);
     // auto [time_rowwise_register, sum_rowwise_register] = timeit(OLAPcore_rowwise_register, args.params);
     // result_table.add_row(tabulate::RowStream{} << "rowwise_register" << time_rowwise_register << sum_rowwise_register);
+    auto [time_rowwise_xn, sum_rowwise_xn] = timeit(OLAPcore_rowwise_xn, args.params);
+    result_table.add_row(tabulate::RowStream{} << "rowwise_xn" << time_rowwise_xn << sum_rowwise_xn);
     auto [time_columnwise_dv, sum_columnwise_dv] = timeit(OLAPcore_columnwise_dv, args.params);
     result_table.add_row(tabulate::RowStream{} << "columnwise_dynamic_vector" << time_columnwise_dv << sum_columnwise_dv);
     auto [time_columnwise_sv, sum_columnwise_sv] = timeit(OLAPcore_columnwise_sv, args.params);
